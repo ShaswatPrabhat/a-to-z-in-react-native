@@ -1,4 +1,5 @@
 module.exports = {
+    pathPrefix: "/a-to-z-in-react-native",
     siteMetadata: {
         title: `The Localhost Blog`,
         description: `This is my coding blog where I write about my coding journey.`,
