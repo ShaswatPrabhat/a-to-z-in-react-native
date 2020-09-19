@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"228N":function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),r=t.n(a);n.default=function(){return r.a.createElement(r.a.Fragment,null,r.a.createElement("p",null,"post here"))}}}]);
+//# sourceMappingURL=component---src-templates-blog-post-template-js-0a1611575e9cf9fcbe8c.js.map
