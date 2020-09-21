@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/templates/blogPostTemplate.js"],"names":[],"mappings":"6FAAA,gCAEe,qBACX,OACI,oCACI","file":"component---src-templates-blog-post-template-js-0a1611575e9cf9fcbe8c.js","sourcesContent":["import React from 'react';\n\nexport default () => {\n    return (\n        <>\n            <p>post here</p>\n        </>\n    );\n};\n"],"sourceRoot":""}
