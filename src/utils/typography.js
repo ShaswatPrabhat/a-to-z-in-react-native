@@ -4,15 +4,11 @@ const typography = new Typography({
     baseLineHeight: 1.58,
     googleFonts: [
         {
-            name: "Varela Round",
-            styles: ["400"],
-        },
-        {
-            name: "Lora",
+            name: "Roboto",
             styles: ["400", "400i", "700"],
         },
     ],
-    bodyFontFamily: ["Lora", "serif"],
+    bodyFontFamily: ["Roboto"],
     headerWeight: "400",
     bodyWeight: 400,
     boldWeight: 700,
