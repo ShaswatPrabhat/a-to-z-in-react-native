@@ -20,19 +20,10 @@ module.exports = {
             },
         },
         {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
+            resolve: `gatsby-plugin-typography`,
             options: {
-                fonts: [
-                    {
-                        family: `Roboto Mono`,
-                        variants: [`400`, `700`]
-                    },
-                    {
-                        family: `Roboto`,
-                        subsets: [`latin`]
-                    },
-                ],
+                pathToConfigModule: `src/utils/typography`,
             },
-        }
+        },
     ],
 };
