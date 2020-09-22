@@ -11,26 +11,24 @@ export default ({data, pageContext}) => {
         <Layout>
             {/*<Dump previous={previous}/>*/}
             {/*<Dump next={next}/>*/}
-            <h1>{frontmatter.title}</h1>
+            <h1 style={{
+                color: '#5304ac'
+            }}>{frontmatter.title}</h1>
             <MDXRenderer>{body}</MDXRenderer>
-            {previous === false ? null : (
-                <>
-                    {previous && (
-                        <Link to={previous.fields.slug}>
-                            <p>{previous.frontmatter.title}</p>
-                        </Link>
-                    )}
-                </>
-            )}
-            {next === false ? null : (
-                <>
-                    {next && (
-                        <Link to={next.fields.slug}>
-                            <p>{next.frontmatter.title}</p>
-                        </Link>
-                    )}
-                </>
-            )}
+            <>
+                {(previous && previous?.frontmatter?.published) && (
+                    <Link to={previous.fields.slug}>
+                        <p>{`Previous - ${previous.frontmatter.title}`}</p>
+                    </Link>
+                )}
+            </>
+            <>
+                {(next && next?.frontmatter?.published) && (
+                    <Link to={next.fields.slug}>
+                        <p>{`Next - ${next.frontmatter.title}`}</p>
+                    </Link>
+                )}
+            </>
         </Layout>
     );
 };
