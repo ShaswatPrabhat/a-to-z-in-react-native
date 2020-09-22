@@ -1,23 +1,21 @@
-import { graphql, Link } from 'gatsby';
+import {graphql, Link} from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { Layout } from '../components/Layout';
+import {Layout} from '../components/Layout';
 
 const IndexWrapper = styled.main``;
 
 const PostWrapper = styled.div``;
 
-export default ({ data }) => {
+export default ({data}) => {
     return (
         <Layout>
             <IndexWrapper>
                 {data.allMdx.nodes.map(
-                    ({ id, excerpt, frontmatter, fields }) => (
+                    ({id, frontmatter, fields}) => (
                         <PostWrapper key={id}>
-                            <Link to={fields.slug}>
-                                <h1>{frontmatter.title}</h1>
-                                <p>{frontmatter.date}</p>
-                                <p>{excerpt}</p>
+                            <Link to={frontmatter.published ? fields.slug : "/"}>
+                                <h1>{`${frontmatter.title[0]}-${frontmatter.title}`}</h1>
                             </Link>
                         </PostWrapper>
                     )
@@ -29,16 +27,12 @@ export default ({ data }) => {
 
 export const query = graphql`
     query SITE_INDEX_QUERY {
-        allMdx(
-            sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { published: { eq: true } } }
-        ) {
+        allMdx(sort: {fields: [frontmatter___title], order: ASC}) {
             nodes {
                 id
-                excerpt(pruneLength: 100)
                 frontmatter {
                     title
-                    date
+                    published
                 }
                 fields {
                     slug

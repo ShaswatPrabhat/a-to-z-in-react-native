@@ -9,19 +9,18 @@ exports.createPages = ({actions, graphql}) => {
 
     return graphql(`
     {
-      allMdx (
-        sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { published: { eq: true } } }
-      ){
-        nodes {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-          }
+        allMdx(sort: {fields: [frontmatter___title], order: ASC}) {
+            nodes {
+                id
+                frontmatter {
+                    title
+                    published
+                }
+                fields {
+                    slug
+                }
+            }
         }
-      }
     }
   `).then(result => {
         if (result.errors) {

@@ -12,7 +12,6 @@ export default ({data, pageContext}) => {
             {/*<Dump previous={previous}/>*/}
             {/*<Dump next={next}/>*/}
             <h1>{frontmatter.title}</h1>
-            <p>{frontmatter.date}</p>
             <MDXRenderer>{body}</MDXRenderer>
             {previous === false ? null : (
                 <>
@@ -42,7 +41,6 @@ export const query = graphql`
             body
             frontmatter {
                 title
-                date(formatString: "YYYY MMMM Do")
             }
         }
     }
