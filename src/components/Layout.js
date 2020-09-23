@@ -1,12 +1,10 @@
 import React from 'react';
+import styled from 'styled-components'
 import {useSiteMetadata} from '../hooks/useSiteMetadata';
-import styled from 'styled-components';
 import {Header} from './Header';
 import {Meta} from "./Meta";
+import {GlobalStyle} from '../styles/GlobalStyle'
 
-const GradientWrapper = styled.html`
-    height: '100%';
-`;
 const AppStyles = styled.main`
     width: 800px;
     margin: 0 auto;
@@ -15,12 +13,13 @@ const AppStyles = styled.main`
 export const Layout = ({children}) => {
     const {title, description} = useSiteMetadata();
     return (
-        <GradientWrapper>
+        <>
+            <GlobalStyle/>
             <AppStyles>
                 <Meta/>
                 <Header siteTitle={title} siteDescription={description}/>
                 {children}
             </AppStyles>
-        </GradientWrapper>
+        </>
     );
 };
