@@ -2,11 +2,11 @@ import React from "react";
 
 // export const wrapRootElement = wrap;
 
-export const onRenderBody = ({setPreBodyComponents}) => {
-    setPreBodyComponents([
-        React.createElement('script', {
-            dangerouslySetInnerHTML: {
-                __html: `
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  setPreBodyComponents([
+    React.createElement("script", {
+      dangerouslySetInnerHTML: {
+        __html: `
           (() => {    
             window.__onThemeChange = function() {};                
             function setTheme(newTheme) {                  
@@ -36,7 +36,7 @@ export const onRenderBody = ({setPreBodyComponents}) => {
             setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'))
           })()
         `,
-            },
-        }),
-    ])
-}
+      },
+    }),
+  ]);
+};
