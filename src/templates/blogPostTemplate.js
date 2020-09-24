@@ -11,13 +11,7 @@ export default ({ data, pageContext }) => {
     <Layout>
       {/*<Dump previous={previous}/>*/}
       {/*<Dump next={next}/>*/}
-      <h1
-        style={{
-          color: "#5304ac",
-        }}
-      >
-        {frontmatter.title}
-      </h1>
+      <h1>{frontmatter.title}</h1>
       <MDXRenderer>{body}</MDXRenderer>
       <>
         {previous && previous?.frontmatter?.published && (

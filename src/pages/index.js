@@ -9,17 +9,19 @@ const PostWrapper = styled.div``;
 
 export default ({ data }) => {
   return (
-    <Layout>
-      <IndexWrapper>
-        {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
-          <PostWrapper key={id}>
-            <Link to={frontmatter.published ? fields.slug : "/"}>
-              <h1>{`${frontmatter.title[0]}-${frontmatter.title}`}</h1>
-            </Link>
-          </PostWrapper>
-        ))}
-      </IndexWrapper>
-    </Layout>
+    <>
+      <Layout>
+        <IndexWrapper>
+          {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
+            <PostWrapper key={id}>
+              <Link to={frontmatter.published ? fields.slug : "/"}>
+                <h1>{`${frontmatter.title[0]}-${frontmatter.title}`}</h1>
+              </Link>
+            </PostWrapper>
+          ))}
+        </IndexWrapper>
+      </Layout>
+    </>
   );
 };
 

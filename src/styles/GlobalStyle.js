@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+
 export const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
@@ -7,6 +8,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--bg);
     color: var(--textNormal);
 
+a {
+  color: var(--textNormal);
+}
     &.dark {
       --bg: #221133;
       --textNormal: #fff;

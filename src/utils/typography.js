@@ -18,10 +18,9 @@ const typography = new Typography({
   bodyWeight: 500,
   boldWeight: 700,
   overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => {
-    const linkColor = "#5304ac";
+    // const linkColor = "#5304ac";
     return {
       a: {
-        color: linkColor,
         textDecoration: "none",
       },
       "a:hover": {
