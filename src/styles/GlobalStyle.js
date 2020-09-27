@@ -21,4 +21,6 @@ export const GlobalStyle = createGlobalStyle`
       --bg: #fff;
       --textNormal: #000;
     }
+    
+  }
   `;

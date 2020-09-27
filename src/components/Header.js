@@ -1,28 +1,12 @@
 import { Link } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../themeProvider/context";
 
 export const Header = ({ siteTitle, siteDescription }) => {
-  let websiteTheme;
-  if (typeof window !== `undefined`) {
-    websiteTheme = window.__theme;
-  }
-
-  const [, setTheme] = useState(websiteTheme);
-
-  const ThemeToggle = () => {
-    window.__setPreferredTheme(websiteTheme === "dark" ? "light" : "dark");
-  };
-
-  useEffect(() => {
-    setTheme(window.__theme);
-    window.__onThemeChange = () => {
-      setTheme(window.__theme);
-    };
-  }, []);
-
+  const { themeToggle } = useContext(ThemeContext);
   return (
     <>
-      <button style={{ height: 60, width: 120 }} onClick={ThemeToggle}>
+      <button style={{ height: 60, width: 120 }} onClick={themeToggle}>
         <text>Toggle Theme</text>
       </button>
       <Link to="/">
