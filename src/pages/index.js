@@ -2,12 +2,21 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import { Layout } from "../components/Layout";
+import { device } from "../constants/breakpoints";
 
 const IndexWrapper = styled.main``;
 
 const PostWrapper = styled.div``;
 
 export default ({ data }) => {
+  const Header = styled.h2`
+    @media ${device.mobileL} {
+      font-size: 20px;
+    }
+    @media ${device.laptop} {
+      font-size: 32px;
+    }
+  `;
   return (
     <>
       <Layout>
@@ -15,7 +24,7 @@ export default ({ data }) => {
           {data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
             <PostWrapper key={id}>
               <Link to={frontmatter.published ? fields.slug : "/"}>
-                <h1>{`${frontmatter.title[0]}-${frontmatter.title}`}</h1>
+                <Header>{`${frontmatter.title[0]}-${frontmatter.title}`}</Header>
               </Link>
             </PostWrapper>
           ))}

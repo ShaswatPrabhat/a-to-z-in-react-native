@@ -8,9 +8,10 @@ export const GlobalStyle = createGlobalStyle`
     background-color: var(--bg);
     color: var(--textNormal);
 
-a {
-  color: var(--textNormal);
-}
+    a {
+        color: var(--textNormal);
+    }
+    
     &.dark {
       --bg: #221133;
       --textNormal: #fff;
