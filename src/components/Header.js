@@ -1,40 +1,32 @@
 import { Link } from "gatsby";
 import React, { useContext } from "react";
 import ThemeContext from "../themeProvider/context";
+import { Sun, Moon } from "@icon-park/react";
 
 export const Header = ({ siteTitle, siteDescription }) => {
   const { theme, themeToggle } = useContext(ThemeContext);
+
+  const onClick = (event) => {
+    console.log(event);
+    themeToggle();
+  };
+
   return (
     <>
-      <button
-        style={{
-          height: 60,
-          width: 60,
-          backgroundColor: "transparent",
-          border: "none",
-        }}
-        onClick={(event) => {
-            console.warn(event);
-          themeToggle();
-        }}
-      >
-        <img
-          src={
-            theme === "dark"
-              ? require("../assets/sun-regular.svg")
-              : require("../assets/moon-solid.svg")
-          }
-          alt="Change theme"
-          style={{
-            marginBottom: -20,
-            backgroundColor: "white",
-          }}
+      {theme === "dark" ? (
+        <Sun
+          theme="filled"
+          style={{ color: "white", marginLeft: "90%" }}
+          size={40}
+          onClick={onClick}
         />
-      </button>
+      ) : (
+        <Moon onClick={onClick} size="40" style={{ marginLeft: "90%" }} />
+      )}
       <Link to="/">
-        <h1>{siteTitle}</h1>
-        <p>{siteDescription}</p>
+        <h1 style={{ marginTop: 30 }}>{siteTitle}</h1>
       </Link>
+      <p>{siteDescription}</p>
     </>
   );
 };

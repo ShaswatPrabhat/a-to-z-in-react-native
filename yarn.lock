@@ -1151,6 +1151,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
+"@icon-park/react@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@icon-park/react/-/react-1.0.11.tgz#43ff47e3d8eae6835eb7a4ba57f5774c21e42115"
+  integrity sha512-QJqTKpB4MbEZ2b+TmOCdxxQ/Od/gyJjtY1MYc7SGaJkv+ATShlbENiAONX5Sy/NOxtuTtrGjENMip+7oNeTjxg==
+
 "@jest/types@^25.5.0":
   version "25.5.0"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-25.5.0.tgz#4d6a4793f7b9599fc3680877b856a97dbccf2a9d"
