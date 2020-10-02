@@ -12,7 +12,7 @@ export const Pre = styled.pre`
   padding: 0.5em;
   overflow-x: auto;
   border-radius: 3px;
-  width: 90%;
+  width: 100%;
 
   & .token-line {
     line-height: 1.3em;

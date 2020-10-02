@@ -9,6 +9,7 @@ const IndexWrapper = styled.main``;
 const PostWrapper = styled.div``;
 
 export default ({ data }) => {
+
   const TopicHeader = styled.h2`
     @media ${device.mobileL} {
       font-size: 20px;

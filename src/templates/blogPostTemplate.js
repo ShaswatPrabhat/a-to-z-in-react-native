@@ -13,20 +13,26 @@ export default ({ data, pageContext }) => {
       {/*<Dump next={next}/>*/}
       <h1>{frontmatter.title}</h1>
       <MDXRenderer>{body}</MDXRenderer>
-      <>
-        {previous && previous?.frontmatter?.published && (
-          <Link to={previous.fields.slug}>
-            <p>{`Previous - ${previous.frontmatter.title}`}</p>
-          </Link>
-        )}
-      </>
-      <>
-        {next && next?.frontmatter?.published && (
-          <Link to={next.fields.slug}>
-            <p>{`Next - ${next.frontmatter.title}`}</p>
-          </Link>
-        )}
-      </>
+      <div
+        style={{
+          marginBottom: "10px",
+        }}
+      >
+        <>
+          {previous && previous?.frontmatter?.published && (
+            <Link to={previous.fields.slug}>
+              <p>{`Previous - ${previous.frontmatter.title}`}</p>
+            </Link>
+          )}
+        </>
+        <>
+          {next && next?.frontmatter?.published && (
+            <Link to={next.fields.slug}>
+              <p>{`Next - ${next.frontmatter.title}`}</p>
+            </Link>
+          )}
+        </>
+      </div>
     </Layout>
   );
 };
